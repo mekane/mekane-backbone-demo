@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Backbone Demo</title>
+    <title>Backbone Demo P3</title>
 </head>
 <body>
 
@@ -15,6 +15,7 @@
     <script src="/js/jquery-2.1.0.js"></script>
     <script src="/js/underscore.js"></script>
     <script src="/js/backbone.js"></script>
+    <script src="views/EmployeeView.js"></script>
 
     <script>
     var joe = new Backbone.Model({
@@ -38,11 +39,7 @@
         drink: 'coffee'
     });
 
-    function displayEmployee( employee ){
-        $('#employee > .name').text( employee.get('name') );
-        $('#employee > .role').text( employee.get('role') );
-        $('#employee > .drink').text( employee.get('drink') );
-    }
+    console.log('var view = new app.EmployeeView({model: joe});');
     </script>
 </body>
 </html>
