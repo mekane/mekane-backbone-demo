@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Backbone Demo P6</title>
+    <title>Backbone Demo P7</title>
     <style>
         .employee {
             display: inline-block;
@@ -35,50 +35,31 @@
     <script src="views/EmployeeView.js"></script>
     <script src="views/EmployeeListView.js"></script>
     <script src="views/EmployeeEditView.js"></script>
+    <script src="collections/EmployeeCollection.js"></script>
 
     <script>
-    var joe = new app.Employee({
-        name: 'Joe',
-        role: 'developer',
-        years: 1,
-        drink: 'tea'
-    });
+    function addEmployee( name, role, experience, drink ){
+        var employee = new app.Employee({
+            name: name,
+            role: role,
+            years: experience,
+            drink: drink
+        });
 
-    var bob = new app.Employee({
-        name: 'Bob',
-        role: 'manager',
-        years: 8,
-        drink: 'coffee'
-    });
+        employeeList.add( employee );
+    }
 
-    var mike = new app.Employee({
-        name: 'Michael',
-        role: 'developer',
-        years: 8,
-        drink: 'coffee'
-    });
 
-    var newGuy = new app.Employee();
+    var employeeList = new app.EmployeeCollection();
 
-    var boxViews = [];
-    boxViews.push( new app.EmployeeView({ model: joe }) );
-    boxViews.push( new app.EmployeeView({ model: bob }) );
-    boxViews.push( new app.EmployeeView({ model: mike}) );
-    boxViews.push( new app.EmployeeView({ model: newGuy}));
+    addEmployee( 'Joe', 'developer', 1, 'tea' );
+    addEmployee( 'Bob', 'manager'  , 8, 'coffee' );
+    addEmployee( 'Michael', 'developer', 8, 'coffee' );     
+    addEmployee( 'New Guy' );
 
-    var listViews = [];
-    listViews.push( new app.EmployeeListView({ model: joe }) );
-    listViews.push( new app.EmployeeListView({ model: bob }) );
-    listViews.push( new app.EmployeeListView({ model: mike}) );
-    listViews.push( new app.EmployeeListView({ model: newGuy}));
-
-    var editViews = [];
-    editViews.push( new app.EmployeeEditView({ model: joe }) );
-    editViews.push( new app.EmployeeEditView({ model: bob }) );
-    editViews.push( new app.EmployeeEditView({ model: mike }));
-    editViews.push( new app.EmployeeEditView({ model: newGuy}));
-
-    // Added EditView - Events handlers 
+    // Added a Collection
+    // employeeList.resetViews( employeeList.sortBy('name') )
+    // employeeList.resetViews( employeeList.where({drink:'coffee'}) ); 
     </script>
 </body>
 </html>
