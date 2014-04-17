@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Backbone Demo P5</title>
+    <title>Backbone Demo P6</title>
     <style>
         .employee {
             display: inline-block;
@@ -9,6 +9,11 @@
             border-radius: 6px;
             margin: 16px;
             padding: 16px;
+        }
+
+        .employee.edit {
+            border-radius: 0;
+            background: #eee;
         }
     </style>
 </head>
@@ -20,12 +25,16 @@
     <header>List View</header>
     <ul id="listViews"></ul>
 
+    <header>Edit Views</header>
+    <div id="editViews"></div>
+
     <script src="/js/jquery-2.1.0.js"></script>
     <script src="/js/underscore.js"></script>
     <script src="/js/backbone.js"></script>
     <script src="models/Employee.js"></script>
     <script src="views/EmployeeView.js"></script>
     <script src="views/EmployeeListView.js"></script>
+    <script src="views/EmployeeEditView.js"></script>
 
     <script>
     var joe = new app.Employee({
@@ -51,11 +60,11 @@
 
     var newGuy = new app.Employee();
 
-    var views = [];
-    views.push( new app.EmployeeView({ model: joe }) );
-    views.push( new app.EmployeeView({ model: bob }) );
-    views.push( new app.EmployeeView({ model: mike}) );
-    views.push( new app.EmployeeView({ model: newGuy}));
+    var boxViews = [];
+    boxViews.push( new app.EmployeeView({ model: joe }) );
+    boxViews.push( new app.EmployeeView({ model: bob }) );
+    boxViews.push( new app.EmployeeView({ model: mike}) );
+    boxViews.push( new app.EmployeeView({ model: newGuy}));
 
     var listViews = [];
     listViews.push( new app.EmployeeListView({ model: joe }) );
@@ -63,10 +72,13 @@
     listViews.push( new app.EmployeeListView({ model: mike}) );
     listViews.push( new app.EmployeeListView({ model: newGuy}));
 
+    var editViews = [];
+    editViews.push( new app.EmployeeEditView({ model: joe }) );
+    editViews.push( new app.EmployeeEditView({ model: bob }) );
+    editViews.push( new app.EmployeeEditView({ model: mike }));
+    editViews.push( new app.EmployeeEditView({ model: newGuy}));
 
-    // Added ListView - all views listen for changes on the same model
- 
-    // newGuy.set('name','Ted');
+    // Added EditView - Events handlers 
     </script>
 </body>
 </html>
