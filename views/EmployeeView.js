@@ -4,18 +4,22 @@ var app = app || {};
 
     app.EmployeeView = Backbone.View.extend({
 
-        el: '#employee',
+        tagName: 'div',
+        className: 'employee',
 
         initialize : function initialize(){
             this.model.on('change', this.render, this);
+
             this.render();
+            $('body').append( this.$el );
         },
 
         render : function render(){
-            // this.$ is scoped to this element, i.e. $('selector', this.$el); 
-            this.$('.name').text(  this.model.get('name') );
-            this.$('.role').text(  this.model.get('role') );
-            this.$('.drink').text( this.model.get('drink'));
+            this.$el.empty();
+
+            this.$el.append( $('<div></div>').addClass('name').text( this.model.get('name' )));
+            this.$el.append( $('<div></div>').addClass('role').text( this.model.get('role' )));
+            this.$el.append( $('<div></div>').addClass('drink').text(this.model.get('drink')));
 
             return this;
         }

@@ -1,45 +1,58 @@
 <!doctype html>
 <html>
 <head>
-    <title>Backbone Demo P3</title>
+    <title>Backbone Demo P4</title>
+    <style>
+        .employee {
+            display: inline-block;
+            border: 1px solid #666;
+            border-radius: 6px;
+            margin: 16px;
+            padding: 16px;
+        }
+    </style>
 </head>
 <body>
-
-    <div id="employee">
-        <label>Name:   </label><span class="name"></span><br/>
-        <label>Role:   </label><span class="role"></span><br/>
-        <label>Drinks: </label><span class="drink"></span><br/>
-    </div>
-
 
     <script src="/js/jquery-2.1.0.js"></script>
     <script src="/js/underscore.js"></script>
     <script src="/js/backbone.js"></script>
+    <script src="models/Employee.js"></script>
     <script src="views/EmployeeView.js"></script>
 
     <script>
-    var joe = new Backbone.Model({
+    var joe = new app.Employee({
         name: 'Joe',
         role: 'developer',
         years: 1,
         drink: 'tea'
     });
 
-    var bob = new Backbone.Model({
+    var bob = new app.Employee({
         name: 'Bob',
         role: 'manager',
         years: 8,
         drink: 'coffee'
     });
 
-    var mike = new Backbone.Model({
+    var mike = new app.Employee({
         name: 'Michael',
         role: 'developer',
         years: 8,
         drink: 'coffee'
     });
 
-    console.log('var view = new app.EmployeeView({model: joe});');
+    var newGuy = new app.Employee();
+
+    var views = [];
+    views.push( new app.EmployeeView({ model: joe }) );
+    views.push( new app.EmployeeView({ model: bob }) );
+    views.push( new app.EmployeeView({ model: mike}) );
+    views.push( new app.EmployeeView({ model: newGuy}));
+
+    // Added Employee Model
+    // Changed Views to use their own elements 
+    // newGuy.set('name','Ted');
     </script>
 </body>
 </html>
