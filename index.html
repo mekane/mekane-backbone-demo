@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <title>Backbone Demo</title>
+</head>
+<body>
+
+    <div id="employee">
+        <label>Name:   </label><span class="name"></span><br/>
+        <label>Role:   </label><span class="role"></span><br/>
+        <label>Drinks: </label><span class="drink"></span><br/>
+    </div>
+
+
+    <script src="/js/jquery-2.1.0.js"></script>
+    <script src="/js/underscore.js"></script>
+    <script src="/js/backbone.js"></script>
+
+    <script>
+    var joe = new Backbone.Model({
+        name: 'Joe',
+        role: 'developer',
+        years: 1,
+        drink: 'tea'
+    });
+
+
+    function displayEmployee( employee ){
+        $('#employee > .name').text( employee.get('name') );
+        $('#employee > .role').text( employee.get('role') );
+        $('#employee > .drink').text( employee.get('drink') );
+    }
+    </script>
+</body>
+</html>
