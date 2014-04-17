@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Backbone Demo P4</title>
+    <title>Backbone Demo P5</title>
     <style>
         .employee {
             display: inline-block;
@@ -14,11 +14,18 @@
 </head>
 <body>
 
+    <header>Box View</header>
+    <div id="boxViews"></div>
+
+    <header>List View</header>
+    <ul id="listViews"></ul>
+
     <script src="/js/jquery-2.1.0.js"></script>
     <script src="/js/underscore.js"></script>
     <script src="/js/backbone.js"></script>
     <script src="models/Employee.js"></script>
     <script src="views/EmployeeView.js"></script>
+    <script src="views/EmployeeListView.js"></script>
 
     <script>
     var joe = new app.Employee({
@@ -50,8 +57,15 @@
     views.push( new app.EmployeeView({ model: mike}) );
     views.push( new app.EmployeeView({ model: newGuy}));
 
-    // Added Employee Model
-    // Changed Views to use their own elements 
+    var listViews = [];
+    listViews.push( new app.EmployeeListView({ model: joe }) );
+    listViews.push( new app.EmployeeListView({ model: bob }) );
+    listViews.push( new app.EmployeeListView({ model: mike}) );
+    listViews.push( new app.EmployeeListView({ model: newGuy}));
+
+
+    // Added ListView - all views listen for changes on the same model
+ 
     // newGuy.set('name','Ted');
     </script>
 </body>

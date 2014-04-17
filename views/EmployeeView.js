@@ -11,7 +11,7 @@ var app = app || {};
             this.model.on('change', this.render, this);
 
             this.render();
-            $('body').append( this.$el );
+            $('#boxViews').append( this.$el );
         },
 
         render : function render(){
