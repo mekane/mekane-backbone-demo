@@ -24,6 +24,19 @@
         drink: 'tea'
     });
 
+    var bob = new Backbone.Model({
+        name: 'Bob',
+        role: 'manager',
+        years: 8,
+        drink: 'coffee'
+    });
+
+    var mike = new Backbone.Model({
+        name: 'Michael',
+        role: 'developer',
+        years: 8,
+        drink: 'coffee'
+    });
 
     function displayEmployee( employee ){
         $('#employee > .name').text( employee.get('name') );
