@@ -51,11 +51,11 @@
 
     var newGuy = new app.Employee();
 
-    var views = [];
-    views.push( new app.EmployeeView({ model: joe }) );
-    views.push( new app.EmployeeView({ model: bob }) );
-    views.push( new app.EmployeeView({ model: mike}) );
-    views.push( new app.EmployeeView({ model: newGuy}));
+    var boxViews = [];
+    boxViews.push( new app.EmployeeView({ model: joe }) );
+    boxViews.push( new app.EmployeeView({ model: bob }) );
+    boxViews.push( new app.EmployeeView({ model: mike}) );
+    boxViews.push( new app.EmployeeView({ model: newGuy}));
 
     var listViews = [];
     listViews.push( new app.EmployeeListView({ model: joe }) );
