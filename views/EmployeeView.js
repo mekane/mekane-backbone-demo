@@ -11,10 +11,13 @@ var app = app || {};
             this.model.on('change', this.render, this);
 
             this.render();
+
             $('body').append( this.$el );
+            //convention - can pass in an option for 'parent', or let the app handle this
         },
 
         render : function render(){
+            //Not best practice - almost worst practice
             this.$el.empty();
 
             this.$el.append( $('<div></div>').addClass('name').text( this.model.get('name' )));
