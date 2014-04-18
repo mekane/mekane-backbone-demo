@@ -56,3 +56,8 @@ Adds a Collection. Use it to keep track of the views.
    2. Collection events. (Remove is a TODO).
    3. Collection underscore methods - filter and sort. 
 
+
+
+### Tips ###
+
+   1. Use `git config alias.co checkout` for less verbose switching between branches.
