@@ -2,15 +2,6 @@ var app = app || {};
 
 (function(){
 
-    function makeInput( name, value ){
-        return $('<input/>').attr({
-            name: name,
-            type: 'text',
-            value: value
-        });
-    }
-
-
     app.EmployeeEditView = Backbone.View.extend({
 
         tagName: 'div',
@@ -21,6 +12,9 @@ var app = app || {};
         },
 
         initialize: function initialize(){
+
+            this.template = Handlebars.compile( $('#employeeEditViewTemplate').html() );
+    
             this.model.on('change', this.render, this);
 
             this.render();
@@ -28,12 +22,7 @@ var app = app || {};
         },
 
         render: function render(){
-            this.$el.empty();
-
-            this.$el.append( makeInput( 'name', this.model.get('name') ));
-            this.$el.append( makeInput( 'role', this.model.get('role') ));
-            this.$el.append( makeInput('drink', this.model.get('drink')));
-
+            this.$el.html( this.template( this.model.toJSON() ));
             return this;
         },
 

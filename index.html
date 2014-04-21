@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Backbone Demo P7</title>
+    <title>Backbone Demo P8</title>
     <link rel="stylesheet" href="css/demo.css">
 </head>
 <body>
@@ -15,9 +15,24 @@
     <header>Edit Views</header>
     <div id="editViews"></div>
 
+
+    <script type="text/x-handlebars-template" id="employeeBoxViewTemplate">
+        <div class="name">{{name}}</div>
+        <div class="role">{{role}}</div> 
+        <div class="drink">{{drink}}</div>
+    </script>
+    <script type="text/x-handlebars-template" id="employeeListViewTemplate">
+        {{name}} the {{role}} drinks {{drink}}
+    </script>
+    <script type="text/x-handlebars-template" id="employeeEditViewTemplate">
+        <input type="text" name="name" value="{{name}}"/>
+        <input type="text" name="role" value="{{role}}"/>
+        <input type="text" name="drink" value="{{drink}}"/>
+    </script>
     <script src="/js/jquery-2.1.0.js"></script>
     <script src="/js/underscore.js"></script>
     <script src="/js/backbone.js"></script>
+    <script src="/js/handlebars.js"></script>
     <script src="models/Employee.js"></script>
     <script src="views/EmployeeView.js"></script>
     <script src="views/EmployeeListView.js"></script>
@@ -44,9 +59,7 @@
     addEmployee( 'Michael', 'developer', 8, 'coffee' );     
     addEmployee( 'New Guy' );
 
-    // Added a Collection
-    // employeeList.resetViews( employeeList.sortBy('name') )
-    // employeeList.resetViews( employeeList.where({drink:'coffee'}) ); 
+    // Added Handlebars for view rendering 
     </script>
 </body>
 </html>

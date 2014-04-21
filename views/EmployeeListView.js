@@ -7,6 +7,9 @@ var app = app || {};
         tagName: 'li',
 
         initialize : function initialize( ){
+
+            this.template = Handlebars.compile( $('#employeeListViewTemplate').html() );
+
             this.model.on('change', this.render, this);
 
             this.render();
@@ -15,8 +18,7 @@ var app = app || {};
         },
 
         render : function render(){
-            this.$el.text( this.model.get('name')+' the '+this.model.get('role' )+' drinks '+this.model.get('drink') );
-
+            this.$el.html( this.template( this.model.toJSON() ));
             return this;
         }
     });

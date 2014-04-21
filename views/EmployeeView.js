@@ -8,6 +8,9 @@ var app = app || {};
         className: 'employee',
 
         initialize : function initialize(){
+
+            this.template = Handlebars.compile( $('#employeeBoxViewTemplate').html() );
+
             this.model.on('change', this.render, this);
 
             this.render();
@@ -15,12 +18,7 @@ var app = app || {};
         },
 
         render : function render(){
-            this.$el.empty();
-
-            this.$el.append( $('<div></div>').addClass('name').text( this.model.get('name' )));
-            this.$el.append( $('<div></div>').addClass('role').text( this.model.get('role' )));
-            this.$el.append( $('<div></div>').addClass('drink').text(this.model.get('drink')));
-
+            this.$el.html( this.template( this.model.toJSON() ));
             return this;
         }
     });
