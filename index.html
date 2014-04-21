@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Backbone Demo P9</title>
+    <title>Backbone Demo P10</title>
     <link rel="stylesheet" href="css/demo.css">
 </head>
 <body>
@@ -15,6 +15,13 @@
     <header>Edit Views</header>
     <div id="editViews"></div>
 
+    <header>New Employee</header>
+    <form id="newEmployeeForm" class="employee edit">
+        <input type="text" name="name" value=""/>
+        <input type="text" name="role" value=""/>
+        <input type="text" name="drink" value=""/>
+        <button type="button">Add</button>
+    </form>
 
     <script type="text/x-handlebars-template" id="employeeBoxViewTemplate">
         <div class="name">{{name}}</div>
@@ -38,14 +45,16 @@
     <script src="views/EmployeeView.js"></script>
     <script src="views/EmployeeListView.js"></script>
     <script src="views/EmployeeEditView.js"></script>
+    <script src="views/NewEmployeeForm.js"></script>
     <script src="collections/EmployeeCollection.js"></script>
 
     <script>
-    employeeList = new app.EmployeeCollection();
+    employeeList = app.employeeList = new app.EmployeeCollection();
+    employeeList.fetch();
 
-    // Added API path for Collection 
-    // API at: localhost:3000/employees
-    // employeeList.fetch()
+    app.newEmployeeForm = new app.NewEmployeeForm();
+
+    // Added connections for Create, Update, and Delete actions 
     </script>
 </body>
 </html>

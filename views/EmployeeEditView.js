@@ -8,7 +8,8 @@ var app = app || {};
         className: 'employee edit',
 
         events: {
-            'change input' : 'updateModel'
+            'change input' : 'updateModel',
+            'click .delete': 'deleteModel'
         },
 
         initialize: function initialize(){
@@ -16,6 +17,7 @@ var app = app || {};
             this.template = Handlebars.compile( $('#employeeEditViewTemplate').html() );
     
             this.model.on('change', this.render, this);
+            this.model.on('remove', this.remove, this);
 
             this.render();
             $('#editViews').append( this.$el );
@@ -31,7 +33,11 @@ var app = app || {};
                  attr = input.attr('name'),
                 value = input.val();
 
-            this.model.set( attr, value );
+            this.model.set( attr, value ).save();
+        },
+
+        deleteModel: function deleteModel( e ){
+            this.model.destroy();
         }
 
     });

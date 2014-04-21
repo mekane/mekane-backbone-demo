@@ -12,6 +12,7 @@ var app = app || {};
             this.template = Handlebars.compile( $('#employeeBoxViewTemplate').html() );
 
             this.model.on('change', this.render, this);
+            this.model.on('remove', this.remove, this);
 
             this.render();
             $('#boxViews').append( this.$el );

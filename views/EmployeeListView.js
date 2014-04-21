@@ -11,6 +11,7 @@ var app = app || {};
             this.template = Handlebars.compile( $('#employeeListViewTemplate').html() );
 
             this.model.on('change', this.render, this);
+            this.model.on('remove', this.remove, this);
 
             this.render();
 
