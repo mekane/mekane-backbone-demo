@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Backbone Demo P8</title>
+    <title>Backbone Demo P9</title>
     <link rel="stylesheet" href="css/demo.css">
 </head>
 <body>
@@ -28,6 +28,7 @@
         <input type="text" name="name" value="{{name}}"/>
         <input type="text" name="role" value="{{role}}"/>
         <input type="text" name="drink" value="{{drink}}"/>
+        <button type="button" class="delete">Delete</button>
     </script>
     <script src="/js/jquery-2.1.0.js"></script>
     <script src="/js/underscore.js"></script>
@@ -40,26 +41,11 @@
     <script src="collections/EmployeeCollection.js"></script>
 
     <script>
-    function addEmployee( name, role, experience, drink ){
-        var employee = new app.Employee({
-            name: name,
-            role: role,
-            years: experience,
-            drink: drink
-        });
+    employeeList = new app.EmployeeCollection();
 
-        employeeList.add( employee );
-    }
-
-
-    var employeeList = new app.EmployeeCollection();
-
-    addEmployee( 'Joe', 'developer', 1, 'tea' );
-    addEmployee( 'Bob', 'manager'  , 8, 'coffee' );
-    addEmployee( 'Michael', 'developer', 8, 'coffee' );     
-    addEmployee( 'New Guy' );
-
-    // Added Handlebars for view rendering 
+    // Added API path for Collection 
+    // API at: localhost:3000/employees
+    // employeeList.fetch()
     </script>
 </body>
 </html>

@@ -3,6 +3,8 @@ var app = app || {};
 (function(){
 
     app.Employee = Backbone.Model.extend({
+    
+        idAttribute: '_id',
 
         defaults: {
             name: 'New Employee',

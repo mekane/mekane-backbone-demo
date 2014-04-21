@@ -6,6 +6,8 @@ var app = app || {};
 
         model: app.Employee,
 
+        url: 'http://localhost:3000/employees', 
+
         initialize: function initialize(){
             this.on('add', this.employeeAdded );
 

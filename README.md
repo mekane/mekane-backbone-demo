@@ -65,6 +65,14 @@ Adds Handlebars.js library for rendering views instead of jQuery DOM manipulatio
    1. Inline Handlebars templates
    2. How to process a model's values through a template into HTML.
 
+### P9 ###
+Adds a URL to the employee collection to load employees from a JSON API.
+
+*Demonstrates:*
+   1. How easy it is to fetch() models and populate a collection.
+   2. The power of the implicit connection between Backbone and a JSON API.
+   3. A sample REST API written in Node.js
+
 ### Tips ###
 
    1. Use `git config alias.co checkout` for less verbose switching between branches.
