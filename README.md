@@ -55,7 +55,7 @@ Adds a Collection. Use it to keep track of the views.
 
 *Demonstrates:*
    1. Declaration and structure of a Collection. Collection methods.
-   2. Collection events. (Remove is a TODO).
+   2. Collection events.
    3. Collection underscore methods - filter and sort. 
 
 ### P8 ###
@@ -72,6 +72,15 @@ Adds a URL to the employee collection to load employees from a JSON API.
    1. How easy it is to fetch() models and populate a collection.
    2. The power of the implicit connection between Backbone and a JSON API.
    3. A sample REST API written in Node.js
+
+### P10 ###
+Adds a few little connections that tie the update form to save back to the API (via PUT), and adds a "delete" button that sends a DELETE request to the API. Adds a "new 
+
+*Demonstrates:*
+   1. Collection.create to make and POST a new Model.
+   2. Model.save to PUT changes to a Model to the API.
+   3. Model.destroy to send a DELETE to the server.
+   4. Model events that are sent to the views to remove themselves.
 
 ### Tips ###
 
