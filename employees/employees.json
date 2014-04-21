@@ -1,0 +1,27 @@
+[
+{
+    "id": 0,
+    "name": "Joe",
+    "role": "developer",
+    "years": 1,
+    "drink": "tea"
+},
+{   
+    "id": 1,
+    "name": "Bob",
+    "role": "Manager",
+    "years": 8,
+    "drink": "coffee"
+},
+{
+    "id": 2,
+    "name": "Michael",
+    "role": "developer",
+    "years": 8,
+    "drink": "coffee"
+},
+{
+    "id": 3,
+    "name": "New Guy"
+}
+]
