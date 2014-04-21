@@ -51,12 +51,19 @@ Adds an EditView. Changes to the inputs set properties on the Model.
    3. Bonus: private function in the EditView (makeInput).
 
 ### P7 ###
-Adds a Collection. Use it to keep track of the views. 
+Adds a Collection. Use it to keep track of the views.  
+
+*Demonstrates:*
    1. Declaration and structure of a Collection. Collection methods.
    2. Collection events. (Remove is a TODO).
    3. Collection underscore methods - filter and sort. 
 
+### P8 ###
+Adds Handlebars.js library for rendering views instead of jQuery DOM manipulations. Added inline templates. 
 
+*Demonstrates:*
+   1. Inline Handlebars templates
+   2. How to process a model's values through a template into HTML.
 
 ### Tips ###
 
