@@ -82,6 +82,12 @@ Adds a few little connections that tie the update form to save back to the API (
    3. Model.destroy to send a DELETE to the server.
    4. Model events that are sent to the views to remove themselves.
 
+### P11 ###
+Adds Backbone routing to show different Views / parts of the app on different URLs.
+
+*Demonstrates:*
+   1. Backbone routing
+
 ### Tips ###
 
    1. Use `git config alias.co checkout` for less verbose switching between branches.

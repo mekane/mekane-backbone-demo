@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Backbone Demo P10</title>
+    <title>Backbone Demo P11</title>
     <link rel="stylesheet" href="css/demo.css">
 </head>
 <body>
@@ -22,6 +22,11 @@
         <input type="text" name="drink" value=""/>
         <button type="button">Add</button>
     </form>
+
+
+    <a href="employees/all">All Employees</a>
+    <a href="employees/role/developer">Developers</a>
+    <a href="employees/drinks/tea">Tea Drinkers</a>
 
     <script type="text/x-handlebars-template" id="employeeBoxViewTemplate">
         <div class="name">{{name}}</div>
@@ -47,6 +52,7 @@
     <script src="views/EmployeeEditView.js"></script>
     <script src="views/NewEmployeeForm.js"></script>
     <script src="collections/EmployeeCollection.js"></script>
+    <script src="routes.js"></script>
 
     <script>
     employeeList = app.employeeList = new app.EmployeeCollection();
@@ -54,7 +60,16 @@
 
     app.newEmployeeForm = new app.NewEmployeeForm();
 
-    // Added connections for Create, Update, and Delete actions 
+    Backbone.history.start({pushState: true, root: 'backbone'});
+
+    // Added Routes
+
+    $(function(){
+        $('body').on('click', 'a', function(e){
+            e.preventDefault();
+            app.router.navigate( $(this).attr('href'), {trigger:true} );
+        });
+    });
     </script>
 </body>
 </html>
